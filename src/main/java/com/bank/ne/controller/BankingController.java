@@ -28,8 +28,8 @@ public class BankingController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Banking> saveTransaction(@Valid @RequestBody Banking banking) {
-        bankingService.saveTransaction(banking);
+    public ResponseEntity<Banking> saveTransaction(@Valid @RequestBody BankingDTO bankingDTO) {
+        bankingService.saveTransaction(bankingDTO);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 

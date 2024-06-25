@@ -4,14 +4,16 @@ import com.bank.ne.dto.BankingDTO;
 import com.bank.ne.entity.Banking;
 import com.bank.ne.entity.Customer;
 import com.bank.ne.entity.Recipient;
+import com.bank.ne.enums.ETransactionType;
 import com.bank.ne.exception.InsufficientFundsException;
 import com.bank.ne.exception.RecipientNotFoundException;
+import com.bank.ne.mailHandling.MailServiceImpl;
 import com.bank.ne.repository.BankingRepository;
+import com.bank.ne.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
-import java.util.UUID;
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 
 @Service
@@ -19,28 +21,38 @@ public class BankingService {
     private final BankingRepository bankingRepository;
     private final CustomerService customerService;
     public final RecipientService recipientService;
+    private final CustomerRepository customerRepository;
+    private final MailServiceImpl mailService;
 
 
     @Autowired
-    public BankingService(BankingRepository bankingRepository, CustomerService customerService, RecipientService recipientService) {
+    public BankingService(BankingRepository bankingRepository, CustomerService customerService, RecipientService recipientService, MailServiceImpl mailService, MailServiceImpl mailService1, CustomerRepository customerRepository) {
         this.bankingRepository = bankingRepository;
         this.customerService = customerService;
         this.recipientService = recipientService;
+        this.mailService = mailService1;
+        this.customerRepository=customerRepository;
     }
 
-    public void saveTransaction(Banking banking) {
-        Customer customer = customerService.getCustomer(banking.getCustomer().getId());
+    @Transactional
+    public Banking saveTransaction(BankingDTO bankingDTO) {
+        Customer customer = customerRepository.findById(bankingDTO.getCustomerId())
+                .orElseThrow(() -> new IllegalArgumentException("Invalid customer ID"));
 
-        customer.getBankings().add(banking); // Add banking transaction to customer's bankings list
+        Banking banking = new Banking();
+        banking.setCustomer(customer);
+        banking.setAccount(bankingDTO.getAccount());
+        banking.setAmount(bankingDTO.getAmount());
+        banking.setType(bankingDTO.getType());
+        banking.setBankingDateTime(bankingDTO.getBankingDateTime());
 
-        customer.setBalance(customer.getBalance() + banking.getAmount());
-        customerService.updateCustomer(customer);
+        Banking savedBanking = bankingRepository.save(banking);
 
-        banking.setId(banking.getId());
-        banking.setBankingDateTime(LocalDateTime.now());
-        banking.setType("saving");
-        bankingRepository.save(banking);
+        mailService.sendMail(customer, banking.getType(), banking.getAmount());
+
+        return savedBanking;
     }
+    //mailService.sendMail(customer,ETransactionType.SAVING,banking.getAmount());
 
     public void withdrawTransaction(BankingDTO bankingDTO) {
         Customer customer = customerService.getCustomer(bankingDTO.getCustomerId());
@@ -53,9 +65,10 @@ public class BankingService {
             banking.setCustomer(customer);
             banking.setAccount(bankingDTO.getAccount());
             banking.setAmount(bankingDTO.getAmount());
-            banking.setType("withdraw");
+            banking.setType(ETransactionType.WITHDRAW);
             banking.setBankingDateTime(LocalDateTime.now());
             bankingRepository.save(banking);
+            mailService.sendMail(customer,ETransactionType.WITHDRAW,bankingDTO.getAmount());
         } else {
             throw new InsufficientFundsException("Insufficient funds for this withdrawal");
         }
@@ -78,7 +91,7 @@ public class BankingService {
             fromBanking.setCustomer(fromCustomer);
             fromBanking.setAccount(fromCustomer.getAccount());
             fromBanking.setAmount(amount);
-            fromBanking.setType("transfer");
+            fromBanking.setType(ETransactionType.TRANSFER);
             fromBanking.setBankingDateTime(LocalDateTime.now());
             bankingRepository.save(fromBanking);
 

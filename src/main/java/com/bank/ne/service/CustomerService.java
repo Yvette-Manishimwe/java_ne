@@ -19,6 +19,10 @@ public class CustomerService {
     }
 
     public void registerCustomer(Customer customer) {
+        Boolean isCustomerEmailTaken = customerRepository.existsByEmail(customer.getEmail());
+        if(isCustomerEmailTaken){
+            throw new IllegalStateException("Customer already exists with email: "+customer.getEmail());
+        }
         customer.setId(customer.getId());
         customer.setLastUpdatedTime(LocalDateTime.now());
         customerRepository.save(customer);

@@ -1,5 +1,6 @@
 package com.bank.ne.entity;
 
+import com.bank.ne.enums.ETransactionType;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -22,9 +23,8 @@ public class Banking {
     @Positive(message = "Amount must be positive")
     private double amount;
 
-    @NotBlank(message = "Transaction type is required")
-    @Size(min = 3, max = 20, message = "Type must be between 3 and 20 characters")
-    private String type; // "saving", "withdraw", "transfer"
+    @Enumerated(EnumType.STRING)
+    private ETransactionType type; // "saving", "withdraw", "transfer"
 
     private LocalDateTime bankingDateTime;
 

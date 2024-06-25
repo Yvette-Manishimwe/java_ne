@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
@@ -17,7 +19,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<Customer> registerCustomer(@RequestBody Customer customer) {
+    public ResponseEntity<Customer> registerCustomer(@Valid @RequestBody Customer customer) {
         customerService.registerCustomer(customer);
         return new ResponseEntity<>(customer, HttpStatus.CREATED);
     }

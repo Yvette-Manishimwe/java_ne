@@ -1,5 +1,6 @@
 package com.bank.ne.dto;
 
+import com.bank.ne.enums.ETransactionType;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -10,7 +11,7 @@ public class BankingDTO {
     private Long customerId;
     private String account;
     private double amount;
-    private String type; // "saving", "withdraw", "transfer"
+    private ETransactionType type; // "saving", "withdraw", "transfer"
     private LocalDateTime bankingDateTime;
 
     // Getters and Setters

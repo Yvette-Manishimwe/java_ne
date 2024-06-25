@@ -5,87 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e01c10c-c718-494f-9f70-0a24eb10c233" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/controller/BankingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/controller/RecipientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/dto/BankingDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/entity/Banking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/entity/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/entity/Recipient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/exception/CustomerNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/exception/InsufficientFundsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/exception/RecipientNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/repository/BankingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/repository/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/repository/RecipientRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/service/BankingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/service/RecipientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/validation/UniqueEmail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/validation/UniqueEmailValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_trigger.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/dto/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/enums/ETransactionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/exception/AppFailureException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/mailHandling/IMailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/mailHandling/MailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/AdminApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/AdminApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/controller/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/controller/LaptopController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/controller/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/controller/StudentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/controller/UserDataController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/dto/LaptopDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/entity/AuthRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/entity/Laptop.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/entity/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/entity/UserData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/exception/EmailAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/exception/EmailAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/filter/JwtAuthenticationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/filter/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/repository/LaptopRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/repository/StudentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/repository/UserDataRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/response/MessageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/response/MessageResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/service/JwtService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/service/LaptopService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/service/StudentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/service/UserDataDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/service/UserDataService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/swagger/SwaggerApiDoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/swagger/SwaggerApiDoc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/validation/RoleValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/validation/RoleValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecommerce/ne/validation/ValidRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/validation/ValidRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/ne/controller/BankingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/controller/BankingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/ne/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/ne/dto/BankingDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/dto/BankingDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/ne/entity/Banking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/entity/Banking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/ne/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/ne/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/ne/service/BankingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/service/BankingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bank/ne/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bank/ne/service/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ecommerce/ne/AdminApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bank/ne/AdminApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/AdminApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/controller/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/controller/LaptopController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/controller/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/controller/StudentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/controller/UserDataController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/dto/LaptopDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/entity/AuthRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/entity/Laptop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/entity/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/entity/UserData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/exception/EmailAlreadyExistsException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/exception/ResourceNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/filter/JwtAuthenticationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/filter/SecurityConfig$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/filter/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/repository/LaptopRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/repository/StudentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/repository/UserDataRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/response/MessageResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/service/JwtService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/service/LaptopService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/service/StudentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/service/UserDataDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/service/UserDataService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/swagger/SwaggerApiDoc$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/swagger/SwaggerApiDoc$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/swagger/SwaggerApiDoc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/validation/RoleValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecommerce/ne/validation/ValidRole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/ne/controller/BankingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/ne/controller/BankingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/ne/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/ne/controller/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/ne/dto/BankingDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/ne/dto/BankingDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/ne/entity/Banking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/ne/entity/Banking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/ne/entity/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/ne/entity/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/ne/entity/Recipient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/ne/entity/Recipient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/ne/response/MessageResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/ne/response/MessageResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/ne/service/BankingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/ne/service/BankingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/ne/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/ne/service/CustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/bank/ne/service/RecipientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bank/ne/service/RecipientService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,8 +45,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -106,13 +56,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -130,20 +73,24 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.AdminApplication (3).executor": "Run",
     "Spring Boot.AdminApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/Downloads/Java_App",
+    "last_opened_file_path": "C:/Users/YVETTE/Documents/java_ne",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
-    "spring.configuration.checksum": "e3afed0047b08059d0fada10f400c1e5",
+    "spring.configuration.checksum": "ff51f614c4b5aab340eaf72a1682bd9c",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -171,7 +118,12 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AdminApplication (3)">
+  <component name="RunManager" selected="Spring Boot.AdminApplication (4)">
+    <configuration name="db_trigger.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/db_trigger.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -203,6 +155,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AdminApplication (4)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="java_ne" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bank.ne.AdminApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bank.ne.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="Admin" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ecommerce.ne.AdminApplication" />
@@ -226,6 +191,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.AdminApplication (4)" />
+        <item itemvalue="Database Script.db_trigger.sql" />
         <item itemvalue="HTTP Request.generated-requests | #3" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="HTTP Request.generated-requests | #1" />
@@ -261,21 +228,12 @@
       <workItem from="1719157990820" duration="547000" />
       <workItem from="1719255355312" duration="10277000" />
       <workItem from="1719306773240" duration="9076000" />
+      <workItem from="1719321973968" duration="2729000" />
+      <workItem from="1719324714806" duration="13103000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/bank/ne/service/BankingService.java</url>
-          <line>2</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
